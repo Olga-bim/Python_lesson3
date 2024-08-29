@@ -154,3 +154,22 @@
     cur.close()
     con.close()
     Это основные роли переменных con и cur в работе с SQLite.
+
+## CREATE TABLE IF NOT EXISTS
+    cur.execute("""
+        CREATE TABLE IF NOT EXISTS cars (
+            brand TEXT,
+            color TEXT,
+            year INTEGER
+        )
+    """)
+## Insert INTO cars VALUES
+    ef addCar(carBrand, carColor, carYear):
+
+        cur.execute(f"Insert INTO cars VALUES ('{carBrand}', '{carColor}', '{carYear}')")
+        con.commit()
+
+    addCar(input("brand"), input("color"), input("year"))
+
+## Delete
+## Update
