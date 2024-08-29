@@ -172,4 +172,39 @@
     addCar(input("brand"), input("color"), input("year"))
 
 ## Delete
+    Функция для удаления записи
+    python
+    Копировать код
+    def deleteCar(carBrand):
+        cur.execute("DELETE FROM cars WHERE brand = ?", (carBrand,))
+        con.commit()
+    Эта функция удалит все записи с указанным брендом.
 ## Update
+    Функция для обновления записи
+    python
+    Копировать код
+    def updateCar(carBrand, newColor, newYear):
+        cur.execute("UPDATE cars SET color = ?, year = ? WHERE brand = ?", (newColor, newYear, carBrand))
+        con.commit()
+    Эта функция обновит цвет и год для указанного бренда.
+
+
+### Пример использования:
+
+    # Добавление новой машины
+    addCar(input("brand: "), input("color: "), input("year: "))
+
+    # Обновление данных машины
+    updateCar(input("brand to update: "), input("new color: "), input("new year: "))
+
+    # Удаление машины
+    deleteCar(input("brand to delete: "))
+    Эти функции помогут вам управлять данными в таблице cars.
+
+
+
+
+
+
+
+ 
